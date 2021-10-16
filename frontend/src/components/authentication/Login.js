@@ -11,15 +11,15 @@ const Login = () => {
                     <div className="login-form">
                         <div className="card-wrapper mt-5">
 
-                            <div className="brand text-center p-3 bg-secondary">
+                            <div className="brand text-center p-3">
                                 <img src={staticURL + 'images/favicon.svg'} alt="login page" height="70"/>
                             </div>
 
                             <div className="card fat login-form">
                                 <div className="card-body">
-                                    <form method="POST" className="my-login-validation" noValidate>
+                                    <form>
 
-                                        <div className="form-group mb-2">
+                                        <div className="form-group mb-3">
                                             <label htmlFor="email">Email</label>
                                             <input type="email" className="form-control" autoFocus name="email" required/>
                                             <div className="invalid-feedback">
@@ -27,15 +27,15 @@ const Login = () => {
                                             </div>
                                         </div>
 
-                                        <div className="form-group mb-2">
+                                        <div className="form-group mb-3">
                                             <label htmlFor="password">Password</label>
-                                            <input id="password" type="password" className="form-control" name="password" required/>
+                                            <input type="password" className="form-control" name="password" required/>
                                             <div className="invalid-feedback">
                                                 Password is required
                                             </div>
                                         </div>
 
-                                        <div className="form-group m-0">
+                                        <div className="form-group my-2">
                                             <button type="submit" className="btn btn-success btn-block w-100 my-2">
                                                 Login
                                             </button>
