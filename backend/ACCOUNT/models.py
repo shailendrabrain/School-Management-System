@@ -5,7 +5,7 @@ User = get_user_model()
 
 
 class TeacherProfile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='teacher')
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='teacher_profile')
     name = models.CharField(max_length=128)
 
     def __str__(self):
@@ -24,7 +24,7 @@ class StudentProfile(models.Model):
         ('12', '12'),
     ]
 
-    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='student')
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='student_profile')
     name = models.CharField(max_length=128)
     enrollment = models.CharField(max_length=10)
     standard = models.CharField(max_length=2, choices=STANDARD)
