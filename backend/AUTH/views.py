@@ -1,8 +1,10 @@
-from rest_framework.generics import CreateAPIView, ListAPIView
-from .models import CustomUser
-from .serializers import UserSerialzer
+from django.contrib.auth import get_user_model
+from rest_framework.generics import CreateAPIView
+from .serializers import StudentRegistrationSerializer
+
+User = get_user_model()
 
 
-class UserRegister(CreateAPIView):
-    serializer_class = UserSerialzer
-    queryset = CustomUser.objects.all()
+class StudentRegisterView(CreateAPIView):
+    serializer_class = StudentRegistrationSerializer
+    queryset = User.objects.all()

@@ -1,12 +1,12 @@
 from django.contrib import admin
-from .models import StudentProfile,TeacherProfile
+from .models import StudentProfile, TeacherProfile
 
 
 @admin.register(StudentProfile)
-class Studentprofile(admin.ModelAdmin):
-    pass
+class StudentProfile(admin.ModelAdmin):
+    list_display = ('user', 'name', 'enrollment', 'standard')
 
 
 @admin.register(TeacherProfile)
-class Teacherprofile(admin.ModelAdmin):
+class TeacherProfile(admin.ModelAdmin):
     pass

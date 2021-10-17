@@ -1,42 +1,24 @@
-from .models import CustomUser
-from rest_framework import serializers
 from django.contrib.auth import get_user_model
+from rest_framework import serializers
 from ACCOUNT.models import StudentProfile
-
+from ACCOUNT.serializers import StudentProfileSerializer
 
 User = get_user_model()
 
 
-class StudentProfileSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = StudentProfile
-        exclude = ["user"]
-
-
-class UserSerialzer(serializers.ModelSerializer):
-    profile = StudentProfileSerializer()
+class StudentRegistrationSerializer(serializers.ModelSerializer):
+    profile = StudentProfileSerializer(source='student_profile')
 
     class Meta:
-        model = CustomUser
-        fields = ["email", "role", "password", "profile"]
+        model = User
+        fields = ['email', 'password', 'profile']
 
     def create(self, validated_data):
-        profile = validated_data.pop("profile")
-
-        user = super(UserSerialzer, self).create(validated_data)
-        user.set_password(validated_data["password"])
+        profile = validated_data.pop('student_profile')
+        user = User.objects.create(**validated_data)
+        user.set_password(validated_data['password'])
+        user.role = 'student'
         user.save()
-
-        StudentProfile.objects.create(
-            user=user,
-            name=profile["name"],
-            enrollment=profile["enrollment"],
-            standard=profile["standard"],
-        )
-
+        profile = StudentProfile.objects.create(user=user, **profile)
+        profile.save()
         return user
-
-    def to_representation(self, instance):
-        data = super(UserSerialzer, self).to_representation(instance)
-        data.update(StudentProfileSerializer(StudentProfile.objects.get(user=instance)))
-        return data
