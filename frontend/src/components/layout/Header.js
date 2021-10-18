@@ -4,13 +4,13 @@ import {NavLink} from "react-router-dom";
 const Header = () => {
     return (
         <>
-            <nav className="navbar navbar-light bg-light">
+            <nav className="navbar navbar-light bg-light pt-2">
                 <div className="container-fluid">
                     <NavLink className="navbar-brand" to="/">SCHOOL MANAGEMENT</NavLink>
 
                     <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
                             aria-controls="offcanvasNavbar">
-                        <span className="navbar-toggler-icon"/>
+                        <span className="navbar-toggler-icon mx-2"/>
                     </button>
 
                     <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">

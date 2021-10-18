@@ -1,4 +1,5 @@
 import React from 'react';
+import "../../style/auth.css";
 import {NavLink} from "react-router-dom";
 import {staticURL} from "../../index";
 
