@@ -34,9 +34,6 @@ const Header = () => {
                                     <NavLink className="nav-link" aria-current="page" to="/">Home</NavLink>
                                 </li>
                                 <li className="nav-item">
-                                    <NavLink className="nav-link" to="/signup">Sign Up</NavLink>
-                                </li>
-                                <li className="nav-item">
                                     <NavLink className="nav-link" to="/login">Login</NavLink>
                                 </li>
                                 <li className="nav-item">
@@ -44,17 +41,6 @@ const Header = () => {
                                 </li>
                                 <li className="nav-item">
                                     <NavLink className="nav-link" to="/contact-us">Contact Us</NavLink>
-                                </li>
-                                <li className="nav-item dropdown">
-                                    <NavLink className="nav-link dropdown-toggle" to="" id="offcanvasNavbarDropdown" role="button"
-                                             data-bs-toggle="dropdown" aria-expanded="false">
-                                        More
-                                    </NavLink>
-                                    <ul className="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
-                                        <li><NavLink className="dropdown-item" to="/admin">Admin</NavLink></li>
-                                        <li><NavLink className="dropdown-item" to="/help">Need Help</NavLink></li>
-                                        <li><NavLink className="dropdown-item" to="/feedback">Feedback</NavLink></li>
-                                    </ul>
                                 </li>
                             </ul>
                         </div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import "../../style/home.css";
 import {staticURL} from "../../index";
+import Footer from "../layout/Footer";
 
 const Home = () => {
     return (
@@ -29,6 +30,8 @@ const Home = () => {
                     </div>
                 </div>
             </header>
+
+            <Footer/>
         </>
     );
 };
