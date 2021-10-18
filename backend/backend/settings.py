@@ -44,7 +44,9 @@ INSTALLED_APPS = [
 
     # APPS
     'AUTH.apps.AuthConfig',
-    'ACCOUNT.apps.AccountConfig'
+    'ACCOUNT.apps.AccountConfig',
+    'ATTENDANCE',
+
 ]
 
 MIDDLEWARE = [
