@@ -3,11 +3,18 @@ import "../../style/auth.css";
 import {staticURL} from "../../index";
 import {useForm} from "react-hook-form";
 import {NavLink} from "react-router-dom";
+import axios from "axios";
 
 const Login = () => {
 
     const {register, handleSubmit, formState: {errors}} = useForm();
-    const onSubmit = data => console.log(data);
+
+    const onSubmit = data => {
+        console.log(data)
+        axios.post("api/auth/token/", data)
+            .then(res => console.log(res.data))
+            .catch(err => console.log(err))
+    }
 
     return (
         <>

@@ -8,7 +8,7 @@ import axios from 'axios';
 
 export const staticURL = "http://localhost:8000/static/";
 
-axios.defaults.baseURL = 'http://localhost:8000';
+axios.defaults.baseURL = 'http://localhost:8000/';
 axios.defaults.headers.post['Content-Type'] = 'application/json';
 
 
@@ -23,3 +23,4 @@ ReactDOM.render(
 
 serviceWorkerRegistration.unregister();
 reportWebVitals();
+

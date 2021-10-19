@@ -12,7 +12,7 @@ const Home = () => {
                         <div className="col-lg-6">
                             <div className="text-container">
                                 <h1 className="h1-large">
-                                    The #1 School Management System
+                                    #1 School Management System
                                 </h1>
                                 <p className="p-large">
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut dignissim, neque ut vanic barem
