@@ -2,18 +2,23 @@ import React from 'react';
 import "../../style/auth.css";
 import {staticURL} from "../../index";
 import {useForm} from "react-hook-form";
-import {NavLink} from "react-router-dom";
+import {NavLink, useHistory} from "react-router-dom";
 import axios from "axios";
+import {useDispatch} from "react-redux";
+import {IS_AUTH} from "../../redux/auth/authTypes";
 
 const Login = () => {
 
     const {register, handleSubmit, formState: {errors}} = useForm();
 
+    const dispatch = useDispatch();
+    const history = useHistory();
+
     const onSubmit = data => {
         console.log(data)
         axios.post("api/auth/token/", data)
-            .then(res => console.log(res.data))
-            .catch(err => console.log(err))
+            .then(res => res.data?.access ? dispatch({type: IS_AUTH, payload: res.data.access}) : console.log(res.data.error))
+            .then(() => history.push('/'))
     }
 
     return (

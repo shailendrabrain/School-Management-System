@@ -1,7 +1,11 @@
 import React from 'react';
 import {NavLink} from "react-router-dom";
+import {useSelector} from "react-redux";
 
 const Header = () => {
+
+    const isAuth = useSelector(state => state.auth);
+
     return (
         <>
             <nav className="navbar navbar-light bg-light pt-2">
@@ -33,9 +37,16 @@ const Header = () => {
                                 <li className="nav-item">
                                     <NavLink className="nav-link" aria-current="page" to="/">Home</NavLink>
                                 </li>
-                                <li className="nav-item">
-                                    <NavLink className="nav-link" to="/login">Login</NavLink>
-                                </li>
+                                {
+                                    isAuth ?
+                                        <li className="nav-item">
+                                            <NavLink className="nav-link" to="/profile">Profile</NavLink>
+                                        </li>
+                                        :
+                                        <li className="nav-item">
+                                            <NavLink className="nav-link" to="/login">Login</NavLink>
+                                        </li>
+                                }
                                 <li className="nav-item">
                                     <NavLink className="nav-link" to="/about">About</NavLink>
                                 </li>
