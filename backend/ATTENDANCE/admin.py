@@ -4,9 +4,10 @@ from .models import Attendance, Subject
 
 @admin.register(Attendance)
 class Attendance(admin.ModelAdmin):
-    pass
+    list_display=['student','date','subject']
 
 
 @admin.register(Subject)
 class Subject(admin.ModelAdmin):
-    pass
+    list_display=['subject_name','standard']
+

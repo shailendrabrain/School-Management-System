@@ -9,4 +9,4 @@ class StudentProfile(admin.ModelAdmin):
 
 @admin.register(TeacherProfile)
 class TeacherProfile(admin.ModelAdmin):
-    pass
+    list_display=['user','name']
