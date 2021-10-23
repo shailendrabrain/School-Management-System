@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from django.contrib.auth import get_user_model
-from .models import Attendance,Subject
+from .models import Attendance,Subject,Score
 User=get_user_model()
 
 
@@ -17,3 +17,7 @@ class SerializeSubject(serializers.ModelSerializer):
         fields=['subject_name','standard']
                 
 
+class SerializeScore(serializers.ModelSerializer):
+    class Meta:
+        model=Score
+        exclude=()

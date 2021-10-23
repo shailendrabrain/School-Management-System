@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Attendance, Subject
+from .models import Attendance, Subject,Score
 # Register your models here.
 
 @admin.register(Attendance)
@@ -11,3 +11,7 @@ class Attendance(admin.ModelAdmin):
 class Subject(admin.ModelAdmin):
     list_display=['subject_name','standard']
 
+
+@admin.register(Score)
+class Score(admin.ModelAdmin):
+    list_display=['date','student','subject','mark']

@@ -2,4 +2,4 @@ from django.contrib import admin
 from .models import CustomUser
 @admin.register(CustomUser)
 class CustomUser(admin.ModelAdmin):
-    pass
+    list_display=['email','role']

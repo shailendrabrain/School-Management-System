@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.generics import CreateAPIView,ListAPIView
-from .serializers import SerializeAttendance,SerializeSubject
+from .serializers import SerializeAttendance,SerializeSubject,SerializeScore
 from .models import Attendance,Subject
 
 
@@ -18,7 +18,10 @@ class Attendance(ListAPIView):
     queryset=Attendance.objects.all()
 
 
-    
+
+class StudentScore(CreateAPIView):
+    serializer_class=SerializeScore
+        
     
     
 

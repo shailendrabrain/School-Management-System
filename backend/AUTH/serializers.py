@@ -1,9 +1,17 @@
 from django.contrib.auth import get_user_model
 from rest_framework import serializers
 from ACCOUNT.models import StudentProfile,TeacherProfile
+from .models import CustomUser
 from ACCOUNT.serializers import StudentProfileSerializer,TeacherProfileSerializer
 
 User = get_user_model()
+
+class UserRegisterSerialize(serializers.ModelSerializer):
+    class Meta:
+        model=CustomUser
+        exclude=()
+
+
 
 
 class StudentRegistrationSerializer(serializers.ModelSerializer):
